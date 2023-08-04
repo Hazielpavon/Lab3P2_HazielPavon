@@ -74,7 +74,7 @@ public class Vehiculos {
 
     @Override
     public String toString() {
-        return "Vehiculos " + "placa = " + placa + " , marca = " + marca + ", modelo = " + modelo + " , tipo = " + tipo + " , ano = " + ano + " , color = " + color;
+        return "Vehiculos " + "placa = " + placa + " , marca = " + marca + ", modelo = " + modelo + " , tipo = " + tipo + " , ano = " + ano + " , color = " + color + ", ";
     }
 
 }
