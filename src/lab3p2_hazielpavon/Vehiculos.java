@@ -1,18 +1,16 @@
-
 package lab3p2_hazielpavon;
 
 import java.awt.Color;
 import java.util.Date;
 
-
 public class Vehiculos {
-    
-    String placa; 
-    String marca; 
-    String modelo; 
-    String tipo; 
-    Date  ano; 
-    Color color; 
+
+    private String placa;
+    private String marca;
+    private String modelo;
+    private String tipo;
+    private Date ano;
+    private Color color;
 
     public Vehiculos(String placa, String marca, String modelo, String tipo, Date ano, Color color) {
         this.placa = placa;
@@ -76,7 +74,7 @@ public class Vehiculos {
 
     @Override
     public String toString() {
-        return "Vehiculos " + "placa = " + placa + " , marca = " + marca + ", modelo = " + modelo + " , tipo = " + tipo + " , ano = " + ano + " , color = " + color ;
+        return "Vehiculos " + "placa = " + placa + " , marca = " + marca + ", modelo = " + modelo + " , tipo = " + tipo + " , ano = " + ano + " , color = " + color;
     }
 
 }
