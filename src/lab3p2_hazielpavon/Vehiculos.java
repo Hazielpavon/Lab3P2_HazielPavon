@@ -1,17 +1,20 @@
+
 package lab3p2_hazielpavon;
 
 import java.awt.Color;
+import java.util.Date;
+
 
 public class Vehiculos {
+    
+    String placa; 
+    String marca; 
+    String modelo; 
+    String tipo; 
+    Date  ano; 
+    Color color; 
 
-    String placa;
-    String marca;
-    String modelo;
-    String tipo;
-    int ano;
-    Color color;
-
-    public Vehiculos(String placa, String marca, String modelo, String tipo, int ano, Color color) {
+    public Vehiculos(String placa, String marca, String modelo, String tipo, Date ano, Color color) {
         this.placa = placa;
         this.marca = marca;
         this.modelo = modelo;
@@ -28,13 +31,7 @@ public class Vehiculos {
     }
 
     public void setPlaca(String placa) {
-
-        for (int i = 0; i < placa.length(); i++) {
-
-            char x = 
-            
-        }
-
+        this.placa = placa;
     }
 
     public String getMarca() {
@@ -61,11 +58,11 @@ public class Vehiculos {
         this.tipo = tipo;
     }
 
-    public int getAno() {
+    public Date getAno() {
         return ano;
     }
 
-    public void setAno(int ano) {
+    public void setAno(Date ano) {
         this.ano = ano;
     }
 
@@ -79,7 +76,7 @@ public class Vehiculos {
 
     @Override
     public String toString() {
-        return "Vehiculos: " + "placa = " + placa + " , marca = " + marca + " , modelo = " + modelo + " , tipo = " + tipo + " , ano = " + ano + ", color = " + color;
+        return "Vehiculos " + "placa = " + placa + " , marca = " + marca + ", modelo = " + modelo + " , tipo = " + tipo + " , ano = " + ano + " , color = " + color ;
     }
 
 }
