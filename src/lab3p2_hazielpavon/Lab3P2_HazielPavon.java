@@ -42,13 +42,14 @@ public class Lab3P2_HazielPavon {
 
                         switch (opvehiculos) {
 
-                            case 1:
+                            case 1: {
                                 String placa = "",
-                                 parteLertras = "H",
-                                 parteNumeros = "";
-
+                                        parteLertras = "H",
+                                        parteNumeros = "",
+                                        trans = "",
+                                        tipoC = "";
                                 boolean v = true,
-                                 t = true;
+                                        t = true;
                                 System.out.println("Ingrese los 2 caracteres (ya empiza en H) ");
                                 parteLertras += leer.next();
 
@@ -97,44 +98,197 @@ public class Lab3P2_HazielPavon {
 
                                 Date fecha1 = obtenerFechaDelUsuario();
 
-                                System.out.println("Ingrese un tipo de combustible");
-                                String tipoC = leer.next();
+                                System.out.println("Ingrese un tipo de combustible, 1: Diesel, 2: Regular, 3: Super");
+                                int tip = leer.nextInt();
+
+                                if (tip == 1) {
+                                    trans = "Diesel";
+                                } else if (tip == 2) {
+                                    trans = "Regular";
+
+                                } else if (tip == 3) {
+                                    trans = "Super";
+                                } else {
+                                    trans = null;
+                                }
 
                                 System.out.println("Ingrese cantidad de puertas");
                                 int cantp = leer.nextInt();
 
-                                System.out.println("Ingrese el tipo de transmision");
+                                System.out.println("Ingrese el tipo de transmision 1. Manual, 2. Automatico");
                                 int tr = leer.nextInt();
 
                                 if (tr == 1) {
-                                    String trans = "Manual";
+                                    trans = "Manual";
                                 } else if (tr == 2) {
-                                    String trans = "Automatico";
+                                    trans = "Automatico";
                                 } else {
-                                    String trans = null;
+                                    trans = null;
                                 }
 
                                 System.out.println("Ingrese el numero de asientos");
                                 int cantA = leer.nextInt();
 
-                                vehiculosarr.add(new Vehiculos(placa,marca,modelo,tipo,color)); 
-                                
+                                vehiculosarr.add(new Automovil(tipoC, cantp, trans, cantA, placa, marca, modelo, tipo, fecha1, color));
                                 break;
+                            }
 
-                            case 2:
+                            case 2: {
+                                String placa = "",
+                                        parteLertras = "B",
+                                        parteNumeros = "";
 
+                                boolean v = true,
+                                        t = true;
+                                System.out.println("Ingrese los 2 caracteres (ya empiza en B) ");
+                                parteLertras += leer.next();
+
+                                while (v) {
+
+                                    if (parteLertras.length() > 3) {
+                                        System.out.println("Ingreso mas caracteres, solo pueden ser 2 caracteres");
+                                        parteLertras = "B";
+                                        parteLertras += leer.next();
+
+                                    } else if (parteLertras.length() == 3) {
+                                        System.out.println("Ingrese los 4 digitos restantes");
+                                        int placa2 = leer.nextInt();
+                                        parteNumeros += String.valueOf(placa2);
+                                        v = false;
+                                    }
+
+                                }
+
+                                while (t) {
+                                    if (parteNumeros.length() > 4) {
+                                        System.out.println("Ingrese bien la placa");
+                                        parteNumeros = "";
+                                        int placa3 = leer.nextInt();
+                                        parteNumeros += String.valueOf(placa3);
+
+                                    } else {
+                                        t = false;
+
+                                    }
+                                }
+
+                                placa = parteLertras.toUpperCase() + parteNumeros;
+
+                                System.out.println("Ingrese una marca");
+                                String marca = leer.next();
+
+                                System.out.println("Ingrese un modelo");
+                                String modelo = leer.next();
+
+                                System.out.println("Ingrese un tipo");
+                                String tipo = leer.next();
+
+                                Color color;
+                                color = JColorChooser.showDialog(null, "Seleccione un color", Color.RED);
+
+                                Date fecha1 = obtenerFechaDelUsuario();
+
+                                System.out.println("Ingresa una velocidad maxima");
+                                double velocidad = leer.nextDouble();
+
+                                System.out.println("Ingrese el peso de la moto en kg");
+                                double peso = leer.nextDouble();
+
+                                System.out.println("Ingrese el gasto de gasolina en l/km");
+                                double gaso = leer.nextDouble();
+
+                                vehiculosarr.add(new Moto(velocidad, peso, gaso, placa, marca, modelo, tipo, fecha1, color));
                                 break;
+                            }
+                            case 3: {
+                                String placa = "",
+                                        parteLertras = "H",
+                                        parteNumeros = "",
+                                        trans = "",
+                                        tipoC = "";
+                                boolean v = true,
+                                        t = true;
+                                System.out.println("Ingrese los 2 caracteres (ya empiza en H) ");
+                                parteLertras += leer.next();
 
-                            case 3:
+                                while (v) {
 
+                                    if (parteLertras.length() > 3) {
+                                        System.out.println("Ingreso mas caracteres, solo pueden ser 2 caracteres");
+                                        parteLertras = "H";
+                                        parteLertras += leer.next();
+
+                                    } else if (parteLertras.length() == 3) {
+                                        System.out.println("Ingrese los 4 digitos restantes");
+                                        int placa2 = leer.nextInt();
+                                        parteNumeros += String.valueOf(placa2);
+                                        v = false;
+                                    }
+
+                                }
+
+                                while (t) {
+                                    if (parteNumeros.length() > 4) {
+                                        System.out.println("Ingrese bien la placa");
+                                        parteNumeros = "";
+                                        int placa3 = leer.nextInt();
+                                        parteNumeros += String.valueOf(placa3);
+
+                                    } else {
+                                        t = false;
+
+                                    }
+                                }
+
+                                placa = parteLertras.toUpperCase() + parteNumeros;
+
+                                System.out.println("Ingrese una marca");
+                                String marca = leer.next();
+
+                                System.out.println("Ingrese un modelo");
+                                String modelo = leer.next();
+
+                                System.out.println("Ingrese un tipo");
+                                String tipo = leer.next();
+
+                                Color color;
+                                color = JColorChooser.showDialog(null, "Seleccione un color", Color.RED);
+
+                                Date fecha1 = obtenerFechaDelUsuario();
+
+                                System.out.println("Ingrese la cantidad de pasajeros que puede tener");
+                                int cantp = leer.nextInt();
+
+                                System.out.println("Ingrese la cantidad de ejes");
+                                int ejes = leer.nextInt();
+
+                                System.out.println("Ingrese la longitud");
+                                int longitud = leer.nextInt();
+
+                                vehiculosarr.add(new Bus(cantp, ejes, longitud, placa, marca, modelo, tipo, fecha1, color));
                                 break;
+                            }
 
                             case 4:
-
+                               
                                 break;
 
                             case 5:
 
+                                for (int i = 0; i < vehiculosarr.size(); i++) {
+                                    System.out.println((i + 1) + ". " + vehiculosarr.get(i));
+                                }
+
+                                System.out.println("Ingrese el vehiculo que quiere eliminar");
+                                int delete = leer.nextInt() - 1;
+
+                                if (delete >= 0 && delete < vehiculosarr.size()) {
+                                    vehiculosarr.remove(delete);
+
+                                    System.out.println("vehiculo eliminado correctamente.");
+                                } else {
+                                    System.out.println("Ingrese un número válido.");
+                                }
                                 break;
 
                             case 6:
